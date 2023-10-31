@@ -23,7 +23,8 @@ export const ITEM_IMG_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 // Swiggy API to get Restaurant data with corsproxy
 export const swiggy_api_URL =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.8585816&lng=75.3497311&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+"https://instafood.onrender.com/api/restaurants?lat=19.8585816&lng=75.3497311"
+    // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.8585816&lng=75.3497311&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
 // Swiggy API to get Restaurant Menu data with corsproxy
 export const swiggy_menu_api_URL =
@@ -43,3 +44,10 @@ export const MENU_ITEM_TYPE_KEY =
   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"; //menu😭😭😭😭
 export const RESTAURANT_TYPE_KEY =
   "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
+
+
+
+
+
+
+//second commming

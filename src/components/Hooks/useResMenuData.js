@@ -17,7 +17,8 @@ const useResMenuData = (
 
   async function getRestaurantInfo() {
     try {
-      const response = await fetch(swiggy_menu_api_URL + resId);
+      const response = await fetch(swiggy_menu_api_URL + resId ,{mode:'cors'}) ;
+     
       if (!response.ok) {
         const err = response.status;
         throw new Error(err);
@@ -56,7 +57,7 @@ const useResMenuData = (
       setMenuItems([]);
       setRestaurant(null);
       console.error(err);
-    }
+    } 
   }
   return [restaurant, menuItems];
 };

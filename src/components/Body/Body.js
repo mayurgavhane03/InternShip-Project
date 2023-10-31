@@ -54,7 +54,7 @@ const MainBody = (user) => {
 
       <div className="mt-12 sm:flex sm:items-center sm:justify-center  ">
           {" "}
-          <h1 className="text-2xl font-bold">Top restaurant in Aurangabad</h1>
+          <h1 className="text-2xl font-bold">Top restaurant </h1>
 
         </div>
       
