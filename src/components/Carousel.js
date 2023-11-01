@@ -3,10 +3,6 @@ import { useState, useEffect } from "react";
 import { images } from "./constant";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 
-
-
-
-
 export default function Carousel() {
   const [startIndex, setStartIndex] = useState(0);
 
@@ -72,13 +68,15 @@ export default function Carousel() {
 
   return (
     <div className="w-3/4 m-auto -z-30">
-       <h1 className="text-2xl  font-bold  mt-[100px] sm:ml-[100px] mb-4">Best offers for you</h1>
+      <div className="flex h-[100px]">
+      <h1 class="text-2xl font-bold mt-[50px] mb-2 mx-auto justify-center items-center ">Best offers for you</h1>
+
+
+
+      </div>
 
       <div className="mt-20 ">
-      
-     
         <div className="bg-white -z-30 h-[160px] text-black rounded-xl flex items-center justify-center relative">
-        
           <button
             onClick={prevImages}
             disabled={startIndex === 0}

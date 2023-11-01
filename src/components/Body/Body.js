@@ -6,7 +6,7 @@ import { swiggy_api_URL } from "../constant";
 import { Link } from "react-router-dom";
 import RestaurantCard from "../RestaurantCard";
 import Carousel from "../Carousel";
-
+import RestroCardShimmer from "../ShimmerUi/RestroCardShimmer";
 const MainBody = (user) => {
   const [searchText, setSearchText] = useState("");
 
@@ -54,13 +54,13 @@ const MainBody = (user) => {
 
       <div className="mt-12 sm:flex sm:items-center sm:justify-center  ">
           {" "}
-          <h1 className="text-2xl font-bold">Top restaurant </h1>
+          <h1 className="text-2xl font-bold">Top restaurant in Aurangabad</h1>
 
         </div>
       
       
       
-      {allRestaurants?.length  ===0 && FilterRes?.length ===0}<div className="w-full flex flex-wrap justify-center items-center gap-10 mt-[100px] ">
+      {allRestaurants?.length  ===0 && FilterRes?.length ===0 ? (<RestroCardShimmer />) :  <div className="w-full flex flex-wrap justify-center items-center gap-10 mt-[100px] ">
         
         {(filteredRestaurants === null ? FilterRes : filteredRestaurants).map(
           (restaurant) => {
@@ -74,7 +74,7 @@ const MainBody = (user) => {
             );
           }
         )}
-      </div>
+      </div>}
     </>
   );
 };
