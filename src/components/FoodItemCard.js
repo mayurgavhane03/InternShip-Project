@@ -1,14 +1,17 @@
-import React from "react";
-import {
-  ITEM_IMG_CDN_URL,
-} from "../constants";
+import { ITEM_IMG_CDN_URL } from "./constant.js";
 
-const FoodItemCart = ({ name, description, imageId, price }) => {
+const FoodItemCard = ({ name, description, imageId, price }) => {
+
+
+
+
+
+
   return (
-    <div className="cart-card {">
-      <img className="cart-img" src={ITEM_IMG_CDN_URL + imageId} alt="" />
-      <h3 className="cart-name">{name}</h3>
-      <p className="cart-item">
+    <div className="flex">
+      <img className="h-[100px] rounded-md" src={ITEM_IMG_CDN_URL + imageId} alt="" />
+      <h3>{name}</h3>
+      <p>
         {price > 0
           ? new Intl.NumberFormat("en-IN", {
               style: "currency",
@@ -16,9 +19,11 @@ const FoodItemCart = ({ name, description, imageId, price }) => {
             }).format(price / 100)
           : " "}
       </p>
-      <p className="item-desc">{description}</p>
+      
+
+
     </div>
   );
 };
 
-export default FoodItemCart;
+export default FoodItemCard;

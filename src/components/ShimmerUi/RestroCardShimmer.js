@@ -18,7 +18,8 @@ const RestroCardShimmer = () => {
               <div className="bg-gray-300 w-1/2 h-4 rounded-full mb-2" />
               <div className="bg-gray-300 w-3/4 h-4 rounded-full mb-2" />
               <div className="bg-gray-300 w-2/3 h-4 rounded-full mb-2" />
-              
+              <div className="bg-gray-300 w-1/3 h-4 rounded-full mb-2" />
+            </div>
           </div>
         </div>
       ))}

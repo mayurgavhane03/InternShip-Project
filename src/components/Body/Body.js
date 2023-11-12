@@ -7,13 +7,15 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "../RestaurantCard";
 import Carousel from "../Carousel";
 import RestroCardShimmer from "../ShimmerUi/RestroCardShimmer";
+import useOnline from "../Hooks/useOnline";
+import CheckOnlineStatus from "../CheckOnlineStatus";
 const MainBody = (user) => {
   const [searchText, setSearchText] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
   const [allRestaurants, FilterRes] = useResData(swiggy_api_URL);
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
-
+  const isonline   =  useOnline()
   const searchData = (searchText, restaurants) => {
     if (searchText !== "") {
       const filteredData = filterData(searchText, restaurants);
@@ -31,6 +33,12 @@ const MainBody = (user) => {
   };
   if (!allRestaurants) return null;
 
+    
+
+    if(!isonline) {
+      <CheckOnlineStatus />
+    }
+ 
   return (
     <>
       <div className="flex flex-wrap mt-[150px]">
