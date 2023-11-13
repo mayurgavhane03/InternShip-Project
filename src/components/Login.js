@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef, useState } from "react";
 import { CheckValidData } from "../utils/CheckValidData";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
@@ -17,7 +18,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 const Login = () => {
-  const cartItems = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const [errorMessage, setErrorMessage] = useState(null);
   const [isSignInForm, setSignInForm] = useState(true);
@@ -65,7 +65,10 @@ const Login = () => {
       // Sign In Logic
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          const user = userCredential.user;
+         // eslint-disable-next-line no-lone-blocks
+         {
+          // const user = userCredential.user; 
+        }
           dispatch(addUser(email.current.value, password.current.value));
           navigate("/");
 
