@@ -4,9 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import { removeUser } from "../store/slices/userslice";
-import AppLogo from './Images/logo/appLogo.png'
-
-
+import AppLogo from "./Images/logo/appLogo.png";
 
 export default function Header() {
   const auth = getAuth();
@@ -45,7 +43,11 @@ export default function Header() {
         <div>
           <Link to="/">
             {" "}
-            <img src={AppLogo} alt="logo"  className=" h-[50px] lg:ml-5 cursor-pointer flex items-center gap-1 "   />
+            <img
+              src={AppLogo}
+              alt="logo"
+              className=" h-[50px] lg:ml-5 cursor-pointer flex items-center gap-1 "
+            />
           </Link>
         </div>
 
@@ -78,7 +80,10 @@ export default function Header() {
           </li>
           <li className="md:ml-8 md:my-0 my-7 font-semibold">
             <Link to="/cart" onClick={() => setOpen(!open)}>
-              Cart <span className="text-orange-500">{Object.values(cartItems).length}</span>
+              Cart{" "}
+              <span className="text-orange-500">
+                {Object.values(cartItems).length}
+              </span>
             </Link>
           </li>
 
@@ -89,6 +94,7 @@ export default function Header() {
                 onClick={() => {
                   setIsLoggedIn(false);
                   handleSignOut();
+                  setOpen(!open);
                   dispatch(removeUser());
                 }}
               >
@@ -97,7 +103,10 @@ export default function Header() {
             ) : (
               <button
                 className="btn bg-orange-500 text-white md:ml-8 font-semibold px-3 py-1 rounded duration-500 md:static"
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  navigate("/login");
+                  setOpen(!open);
+                }}
               >
                 Sign In
               </button>
@@ -110,38 +119,3 @@ export default function Header() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
